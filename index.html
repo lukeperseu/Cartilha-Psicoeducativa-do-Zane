@@ -1,20 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zane // Guia de Sobrevivência Mental</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #E2E8F0; /* Seu fundo cinza-azulado recomendado */
+            background-color: #E2E8F0;
         }
         .serif-font {
             font-family: 'Playfair Display', serif;
@@ -23,8 +21,8 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         @keyframes breathe {
-            0%, 100% { transform: scale(1); background-color: #F3E8FF; } /* Roxo bem suave */
-            40% { transform: scale(1.4); background-color: #C084FC; } /* Roxo médio/Ciano */
+            0%, 100% { transform: scale(1); background-color: #F3E8FF; }
+            40% { transform: scale(1.4); background-color: #C084FC; }
             60% { transform: scale(1.4); background-color: #C084FC; }
         }
         .breathe-circle {
@@ -38,31 +36,26 @@
 </head>
 <body class="text-slate-900 flex flex-col min-h-screen p-0 sm:p-4">
 
-    <!-- Container Central da Cartilha (Estética de Arcádia: Roxo e Azul Escuro de Base) -->
     <div class="flex-grow max-w-md w-full mx-auto bg-white shadow-2xl flex flex-col relative overflow-hidden my-0 sm:rounded-3xl border border-slate-200/60 shadow-[#94A3B8]">
         
-        <!-- Barra de Progresso Superior (Ciano Elétrico para o contraste estelar) -->
         <div class="h-1.5 w-full bg-slate-100 relative z-20">
             <div id="progressBar" class="h-full bg-[#06B6D4] transition-all duration-300" style="width: 0%"></div>
         </div>
 
-        <!-- Cabeçalho Fixo (Identidade Zane) -->
         <header class="px-6 py-4 flex justify-between items-center border-b border-slate-100 relative z-20 bg-white/90 backdrop-blur-md">
             <div class="flex items-center space-x-2">
                 <span class="p-1.5 bg-[#E0F2FE] text-[#3B1E54] rounded-xl">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </span>
-                <span class="text-xs font-bold tracking-wider text-slate-400 uppercase">ZANE // PROTOCOLO PSICOEDUCATIVO</span>
+                <span class="text-xs font-bold tracking-wider text-slate-400 uppercase">ZANE // PROTOCOLO ALETHÉIA</span>
             </div>
             <div class="text-xs font-semibold bg-slate-100 text-slate-600 px-3 py-1 rounded-full" id="pageIndicator">
-                Pág. 1 de 6
+                Pág. 1 de 7
             </div>
         </header>
 
-        <!-- CONTEÚDO DAS PÁGINAS (CARROSSEL) -->
         <main class="flex-grow relative flex items-stretch min-h-[520px]">
 
-            <!-- ================= PÁGINA 0: INTRODUÇÃO ================= -->
             <section id="page0" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-gradient-to-b from-[#E0F2FE]/30 via-white to-white overflow-y-auto">
                 <div class="my-auto space-y-6">
                     <div class="inline-block bg-[#3B1E54] text-[#E0F2FE] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Sincronia Estabelecida</div>
@@ -74,374 +67,282 @@
                     <p class="text-slate-600 leading-relaxed text-sm">
                         Se você veio pelo panfleto impresso ou caiu aqui por acaso, o recado é o mesmo: sua mente não foi feita para aguentar esse bombardeio digital e acadêmico sem pedir arrego. 
                     </p>
-                    <p class="text-slate-600 leading-relaxed text-sm">
-                        Já que estamos aqui, vamos direto ao ponto. Sem enrolação teórica. Arraste ou avance para darmos uma olhada nas engrenagens que estão tentando travar o seu cérebro.
-                    </p>
                     <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex items-start space-x-3">
-                        <span class="text-xl mt-0.5">👇🏻</span>
-                        </p>
+                        <span class="text-xl mt-0.5">⇩⇩⇩</span>
                         <p class="text-xs text-slate-500 leading-relaxed font-medium">
                             ☕︎︎⌥(༼ ◡≏༽𓆪}ᥫ᭡
                             Use os botões abaixo para navegar pelas seções. Eu vou te acompanhar em cada uma delas.
                         </p>
                     </div>
                 </div>
-                
                 <div class="pt-6">
-                    <button onclick="goToPage(1)" class="w-full bg-[#1E293B] hover:bg-[#3B1E54] text-white font-medium py-4 px-6 rounded-2xl flex items-center justify-center space-x-2 transition-all shadow-lg active:scale-[0.98]">
+                    <button onclick="goToPage(1)" class="w-full bg-[#1E293B] hover:bg-[#3B1E54] text-white font-medium py-4 px-6 rounded-2xl flex items-center justify-center space-x-2 transition-all shadow-lg">
                         <span>Analisar Alertas</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </button>
                 </div>
             </section>
 
-            <!-- ================= SEÇÃO 1: ANSIEDADE E DEPRESSÃO ================= -->
             <section id="page1" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">01</span>
                         <h2 class="text-xs font-bold text-[#7A1C1C] uppercase tracking-wider">Ansiedade & Depressão</h2>
                     </div>
-                    
                     <h3 class="serif-font text-2xl font-bold text-slate-900">A Luta Silenciosa</h3>
-                    
                     <p class="text-slate-600 leading-relaxed text-sm">
-                        A <strong class="text-[#1E293B]">Ansiedade</strong> é igual a um alarme de incêndio ultra-sensível: ele dispara desesperado no seu peito só porque você queimou uma torrada. Ela acelera o seu amanhã e te deixa em alerta eterno.
+                        A <strong class="text-[#1E293B]">Ansiedade</strong> é igual a um alarme de incêndio ultra-sensível: ele dispara desesperado no seu peito só porque você queimou uma torrada. A <strong class="text-[#1E293B]">Depressão</strong> joga um filtro cinza e pesado no seu presente, tirando a cor das coisas.
                     </p>
-                    <p class="text-slate-600 leading-relaxed text-sm">
-                        A <strong class="text-[#1E293B]">Depressão</strong> faz o oposto: joga um filtro cinza e pesado no seu presente, tirando a cor e a graça de tudo o que você mais gostava de fazer.
-                    </p>
-
-                    <!-- Ferramenta Interativa: Exercício de Respiração com cores do Zane -->
                     <div class="p-5 bg-slate-50 border border-slate-100 rounded-2xl space-y-4" id="breatheContainer">
                         <div class="flex justify-between items-center">
                             <span class="text-xs font-bold text-[#3B1E54] tracking-wider uppercase">Drible Prático</span>
                             <span class="text-xs text-[#3B1E54]" id="breatheText">Toque para iniciar</span>
                         </div>
                         <div class="flex items-center justify-between">
-                            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-white border border-purple-100 relative shadow-sm">
+                            <div class="w-14 h-14 flex items-center justify-center rounded-full bg-white border border-purple-100 relative">
                                 <div class="breathe-circle w-8 h-8 rounded-full opacity-60"></div>
                             </div>
-                            <div class="flex-1 pl-4">
-                                <h4 class="text-xs font-bold text-slate-800">Âncora de Respiração</h4>
-                                <p class="text-[10px] text-slate-500">Ritmo 4-7-8 para acalmar o alarme.</p>
-                            </div>
-                            <button id="breatheBtn" onclick="toggleBreathing()" class="bg-[#3B1E54] text-white p-2.5 rounded-xl hover:bg-[#7A1C1C] transition-colors">
+                            <button id="breatheBtn" onclick="toggleBreathing()" class="bg-[#3B1E54] text-white p-2.5 rounded-xl">
                                 <svg id="breatheIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path></svg>
                             </button>
                         </div>
                     </div>
                 </div>
-
                 <div class="pt-6 flex space-x-3">
-                    <button onclick="goToPage(0)" class="w-1/3 border border-slate-200 text-slate-600 hover:bg-slate-50 font-medium py-3.5 rounded-xl transition-all text-sm">Voltar</button>
-                    <button onclick="goToPage(2)" class="w-2/3 bg-[#1E293B] hover:bg-[#3B1E54] text-white font-medium py-3.5 rounded-xl transition-all text-sm flex items-center justify-center space-x-2">
-                        <span>Seguir</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
+                    <button onclick="goToPage(0)" class="w-1/3 border border-slate-200 text-slate-600 py-3.5 rounded-xl text-sm">Voltar</button>
+                    <button onclick="goToPage(2)" class="w-2/3 bg-[#1E293B] text-white py-3.5 rounded-xl text-sm">Seguir</button>
                 </div>
             </section>
 
-            <!-- ================= SEÇÃO 2: ESTRESSE DIGITAL E SONO ================= -->
             <section id="page2" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">02</span>
                         <h2 class="text-xs font-bold text-[#7A1C1C] uppercase tracking-wider">Estresse Digital & Sono</h2>
                     </div>
-
                     <h3 class="serif-font text-2xl font-bold text-slate-900">A Mente Hiperconectada</h3>
-
                     <p class="text-slate-600 leading-relaxed text-sm">
-                        Seu cérebro é analógico. Quando você mexe no celular na cama no escuro, a <strong class="text-[#7A1C1C]">luz azul</strong> grita pro seu corpo: <em class="not-italic text-slate-900 font-semibold">"Ainda é meio-dia!"</em>. Isso trava a melatonina e bagunça seu relógio biológico.
+                        Mexer no celular na cama no escuro grita pro seu corpo: <em>"Ainda é meio-dia!"</em>. Isso trava a melatonina e gera cansaço mental puro por picos de dopamina das redes sociais.
                     </p>
-                    <p class="text-slate-600 leading-relaxed text-sm">
-                        O feed infinito funciona como uma roleta de dopamina. Você deita para descansar, mas sua mente continua ativa, correndo uma maratona invisível e gerando cansaço mental puro.
-                    </p>
-
-                    <!-- Auto-teste Rápido com Cores Zane -->
-                    <div class="p-5 bg-slate-50 border border-slate-100 rounded-2xl space-y-4">
-                        <h4 class="text-xs font-bold text-[#3B1E54] tracking-wider uppercase">Auto-teste: Como está sua Higiene Digital?</h4>
-                        <div class="space-y-2 text-xs">
-                            <label class="flex items-start space-x-3 p-1.5 hover:bg-[#E0F2FE]/40 rounded-xl cursor-pointer transition-colors">
-                                <input type="checkbox" class="higiene-checkbox mt-0.5 rounded text-[#3B1E54] focus:ring-[#3B1E54]" onchange="checkHigiene()">
-                                <span class="text-slate-600">Levo o celular para a cama e mexo antes de tentar dormir.</span>
-                            </label>
-                            <label class="flex items-start space-x-3 p-1.5 hover:bg-[#E0F2FE]/40 rounded-xl cursor-pointer transition-colors">
-                                <input type="checkbox" class="higiene-checkbox mt-0.5 rounded text-[#3B1E54] focus:ring-[#3B1E54]" onchange="checkHigiene()">
-                                <span class="text-slate-600">Sinto urgência ou ansiedade para checar notificações.</span>
-                            </label>
-                        </div>
-                        <div id="higieneFeedback" class="text-xs font-semibold text-slate-500 transition-all duration-300">
-                            Marque os seus hábitos atuais para a análise.
-                        </div>
+                    <div class="p-5 bg-slate-50 border border-slate-100 rounded-2xl space-y-2 text-xs">
+                        <label class="flex items-start space-x-3"><input type="checkbox" class="higiene-checkbox mt-0.5" onchange="checkHigiene()"> <span>Uso o celular na cama antes de dormir.</span></label>
+                        <div id="higieneFeedback" class="text-xs font-semibold text-slate-500 mt-2">Marque seus hábitos.</div>
                     </div>
                 </div>
-
                 <div class="pt-6 flex space-x-3">
-                    <button onclick="goToPage(1)" class="w-1/3 border border-slate-200 text-slate-600 hover:bg-slate-50 font-medium py-3.5 rounded-xl transition-all text-sm">Voltar</button>
-                    <button onclick="goToPage(3)" class="w-2/3 bg-[#1E293B] hover:bg-[#3B1E54] text-white font-medium py-3.5 rounded-xl transition-all text-sm flex items-center justify-center space-x-2">
-                        <span>Seguir</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
+                    <button onclick="goToPage(1)" class="w-1/3 border border-slate-200 text-slate-600 py-3.5 rounded-xl text-sm">Voltar</button>
+                    <button onclick="goToPage(3)" class="w-2/3 bg-[#1E293B] text-white py-3.5 rounded-xl text-sm">Seguir</button>
                 </div>
             </section>
 
-            <!-- ================= SEÇÃO 3: ESGOTAMENTO (BURNOUT) ================= -->
             <section id="page3" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">03</span>
                         <h2 class="text-xs font-bold text-[#7A1C1C] uppercase tracking-wider">Esgotamento Acadêmico</h2>
                     </div>
-
                     <h3 class="serif-font text-2xl font-bold text-slate-900">Combustível Zerado</h3>
-
-                    <p class="text-slate-600 leading-relaxed text-sm">
-                        Burnout não é preguiça. É simplesmente a sua <strong class="text-[#3B1E54]">bateria biológica zerando</strong> porque o ambiente cobra demais e você não puxou o fio da tomada para se recarregar de verdade.
-                    </p>
-
-                    <!-- Interativo: Medidor de Bateria (Totalmente Roxo) -->
                     <div class="p-5 bg-[#3B1E54] text-white rounded-2xl space-y-4 shadow-md">
                         <div class="flex justify-between items-center">
-                            <h4 class="text-[11px] font-bold text-[#E0F2FE] tracking-wider uppercase">Status da sua Bateria:</h4>
-                            <!-- Roxo em destaque para carga saudável -->
+                            <h4 class="text-[11px] font-bold text-[#E0F2FE] uppercase">Status da Bateria:</h4>
                             <span id="batteryPercent" class="text-xs font-bold text-[#C084FC]">100% Estável</span>
                         </div>
-                        
-                        <div class="h-3 bg-slate-700/50 rounded-full overflow-hidden p-0.5 border border-slate-600">
-                            <!-- Cor roxa aplicada na barra de carregamento -->
-                            <div id="batteryIndicator" class="h-full bg-[#C084FC] transition-all duration-500 rounded-full" style="width: 100%"></div>
+                        <div class="h-3 bg-slate-700/50 rounded-full p-0.5 border border-slate-600">
+                            <div id="batteryIndicator" class="h-full bg-[#C084FC] rounded-full" style="width: 100%"></div>
                         </div>
-
-                        <div class="space-y-2 text-xs text-slate-200">
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="checkbox" class="battery-chk rounded bg-slate-800 border-slate-600 text-[#C084FC] focus:ring-0" onchange="updateBattery()">
-                                <span>Acordo exausto, mesmo dormindo bastante.</span>
-                            </label>
-                            <label class="flex items-center space-x-3 cursor-pointer">
-                                <input type="checkbox" class="battery-chk rounded bg-slate-800 border-slate-600 text-[#C084FC] focus:ring-0" onchange="updateBattery()">
-                                <span>Sinto irritação extrema com prazos ou mensagens.</span>
-                            </label>
+                        <div class="space-y-2 text-xs">
+                            <label class="flex items-center space-x-3"><input type="checkbox" class="battery-chk rounded text-[#C084FC]" onchange="updateBattery()"> <span>Acordo sempre exausto.</span></label>
                         </div>
                     </div>
                 </div>
-
                 <div class="pt-6 flex space-x-3">
-                    <button onclick="goToPage(2)" class="w-1/3 border border-slate-200 text-slate-600 hover:bg-slate-50 font-medium py-3.5 rounded-xl transition-all text-sm">Voltar</button>
-                    <button onclick="goToPage(4)" class="w-2/3 bg-[#1E293B] hover:bg-[#3B1E54] text-white font-medium py-3.5 rounded-xl transition-all text-sm flex items-center justify-center space-x-2">
-                        <span>Seguir</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
+                    <button onclick="goToPage(2)" class="w-1/3 border border-slate-200 text-slate-600 py-3.5 rounded-xl text-sm">Voltar</button>
+                    <button onclick="goToPage(4)" class="w-2/3 bg-[#1E293B] text-white py-3.5 rounded-xl text-sm">Seguir</button>
                 </div>
             </section>
 
-            <!-- ================= SEÇÃO 4: DESENVOLVIMENTO HUMANO ================= -->
             <section id="page4" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">04</span>
                         <h2 class="text-xs font-bold text-[#7A1C1C] uppercase tracking-wider">Desenvolvimento Humano</h2>
                     </div>
-
                     <h3 class="serif-font text-2xl font-bold text-slate-900">As Estações do Crescer</h3>
-
                     <p class="text-slate-600 leading-relaxed text-sm">
-                        Nossa jornada é feita de estações climáticas. Na juventude encaramos crises de identidade e escolhas; na vida adulta, o peso da rotina. É normal sentir fricção e dificuldade ao mudar de fase.
+                        Nossa jornada tem estações climáticas. O sinal fica amarelo se você paralisar por completo ou se isolar do mundo para fugir das exigências do amadurecimento.
                     </p>
-                    
-                    <div class="p-4 bg-[#E0F2FE] border border-sky-100 rounded-2xl">
-                        <h4 class="text-xs font-bold text-[#1E293B] uppercase tracking-wider mb-1">Quando o Zane diz que travou? ⚠️</h4>
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                            O processo deixa de ser saudável quando você paralisa por completo ou adota o isolamento voluntário profundo e prolongado para fugir das exigências naturais do amadurecimento.
-                        </p>
+                </div>
+                <div class="pt-6 flex space-x-3">
+                    <button onclick="goToPage(3)" class="w-1/3 border border-slate-200 text-slate-600 py-3.5 rounded-xl text-sm">Voltar</button>
+                    <button onclick="goToPage(5)" class="w-2/3 bg-[#1E293B] text-white py-3.5 rounded-xl text-sm">Seguir</button>
+                </div>
+            </section>
+
+            <section id="page5" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto hidden">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">05</span>
+                        <h2 class="text-xs font-bold text-[#7A1C1C] uppercase tracking-wider">Espaço de Escuta // Pesquisa</h2>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-2 text-[11px] font-medium">
-                        <div class="p-2 bg-slate-50 rounded-xl border border-slate-100 text-slate-600">🔒 Paralisia frente a escolhas</div>
-                        <div class="p-2 bg-slate-50 rounded-xl border border-slate-100 text-slate-600">🚪 Isolamento social agudo</div>
+                    <h3 class="serif-font text-2xl font-bold text-slate-900">Como está sua mente?</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Seu relato será enviado anonimamente para nossa base e processado pelo Zane.
+                    </p>
+
+                    <form id="researchForm" class="space-y-4 text-xs">
+                        <div class="space-y-1.5">
+                            <label class="font-bold text-slate-700">Descreva brevemente como a rotina acadêmica afeta você (Relato Livre):</label>
+                            <textarea id="userRelato" rows="5" placeholder="Desabafe aqui... Zane está processando." class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-1 focus:ring-[#3B1E54] focus:outline-none resize-none"></textarea>
+                        </div>
+                        <button type="button" onclick="submitResearch()" class="w-full bg-[#3B1E54] text-white font-bold py-3 rounded-xl hover:bg-[#7A1C1C] transition-colors">
+                            Processar e Enviar Relato
+                        </button>
+                    </form>
+
+                    <div id="localAnalysis" class="hidden p-4 bg-[#F3E8FF] rounded-2xl space-y-2 border border-purple-100">
+                        <h4 class="font-bold text-[#1E293B] text-xs uppercase tracking-wider">⚡ Detecção do Zane:</h4>
+                        <p id="analysisResult" class="text-[11px] text-slate-700 leading-relaxed"></p>
                     </div>
                 </div>
 
                 <div class="pt-6 flex space-x-3">
-                    <button onclick="goToPage(3)" class="w-1/3 border border-slate-200 text-slate-600 hover:bg-slate-50 font-medium py-3.5 rounded-xl transition-all text-sm">Voltar</button>
-                    <button onclick="goToPage(5)" class="w-2/3 bg-[#1E293B] hover:bg-[#3B1E54] text-white font-medium py-3.5 rounded-xl transition-all text-sm flex items-center justify-center space-x-2">
-                        <span>Concluir</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
+                    <button onclick="goToPage(4)" class="w-1/3 border border-slate-200 text-slate-600 py-3.5 rounded-xl text-sm">Voltar</button>
+                    <button onclick="goToPage(6)" class="w-2/3 bg-[#1E293B] text-white py-3.5 rounded-xl text-sm">Avançar</button>
                 </div>
             </section>
 
-            <!-- ================= PÁGINA 5: CONCLUSÃO E APRESENTAÇÃO ================= -->
-            <section id="page5" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-gradient-to-b from-white to-slate-50 overflow-y-auto hidden">
+            <section id="page6" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-gradient-to-b from-white to-slate-50 overflow-y-auto hidden">
                 <div class="space-y-6">
                     <div class="text-center">
                         <span class="inline-block text-3xl mb-1">⚔️</span>
                         <h3 class="serif-font text-2xl font-bold text-[#1E293B]">Cuidar de si é o projeto real</h3>
                     </div>
-
                     <p class="text-slate-600 leading-relaxed text-xs text-center">
-                        Identificou esses sinais? Massa. O autoconhecimento é o primeiro passo para não deixar o sistema colapsar. Se precisar de uma base firme para organizar a cabeça, use os canais oficiais da instituição.
+                        Obrigado por colaborar com a nossa pesquisa! O autoconhecimento e a coletividade mudam nossa realidade.
                     </p>
-
-                    <div class="space-y-2">
+                    <div class="space-y-2 text-left">
                         <div class="p-3 bg-white border border-slate-100 rounded-xl flex items-center space-x-3 shadow-sm">
-                            <span class="text-lg">🏫</span>
+                            <span>🏫</span>
                             <div>
                                 <h5 class="text-xs font-bold text-slate-800">Serviço de Psicologia Aplicada (SPA)</h5>
                                 <p class="text-[9px] text-slate-500">Clínica-escola da nossa instituição.</p>
                             </div>
                         </div>
-                        <div class="p-3 bg-white border border-slate-100 rounded-xl flex items-center space-x-3 shadow-sm">
-                            <span class="text-lg">📞</span>
-                            <div>
-                                <h5 class="text-xs font-bold text-slate-800">Centro de Valorização da Vida</h5>
-                                <p class="text-[9px] text-slate-500">Ligue 188 para suporte emocional confidencial.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
                 <div class="pt-4 space-y-4">
-                    <!-- Rodapé Institucional Requisitado em Vermelho Britânico -->
                     <footer class="text-center py-3 border-t border-slate-200">
                         <p class="text-[9px] text-[#7A1C1C] font-bold tracking-widest uppercase">FALANDO ABERTAMENTE</p>
-                        <p class="text-[9px] text-slate-400 mt-0.5 font-medium">Curso de Psicologia // Faculdade Anhanguera</p>
+                        <p class="text-[9px] text-slate-400 mt-0.5">Curso de Psicologia // Faculdade Anhanguera</p>
                     </footer>
-                    
-                    <button onclick="goToPage(0)" class="w-full bg-[#3B1E54] hover:bg-[#1E293B] text-white font-medium py-3 rounded-xl transition-all text-sm flex items-center justify-center space-x-2">
-                        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"></path></svg>
-                        <span>Voltar ao Início</span>
-                    </button>
+                    <button onclick="goToPage(0)" class="w-full bg-[#3B1E54] text-white py-3 rounded-xl text-sm">Voltar ao Início</button>
                 </div>
             </section>
 
         </main>
     </div>
 
-    <!-- Script de Funcionamento dos Componentes Interativos -->
     <script>
+        // CONFIGURAÇÃO DO EMAILJS (Substitua pela sua chave pública quando criar a conta)
+        (function(){
+            emailjs.init("SUA_CHAVE_PUBLICA_AQUI"); 
+        })();
+
         let currentPage = 0;
-        const totalPages = 6;
+        const totalPages = 7;
 
         function updateProgress() {
             const bar = document.getElementById('progressBar');
             const indicator = document.getElementById('pageIndicator');
-            const percent = (currentPage / (totalPages - 1)) * 100;
-            bar.style.width = `${percent}%`;
+            bar.style.width = `${(currentPage / (totalPages - 1)) * 100}%`;
             indicator.innerText = `Pág. ${currentPage + 1} de ${totalPages}`;
         }
 
         function goToPage(pageNum) {
             for (let i = 0; i < totalPages; i++) {
                 const page = document.getElementById(`page${i}`);
-                if (i === pageNum) {
-                    page.classList.remove('hidden');
-                    page.scrollTop = 0;
-                } else {
-                    page.classList.add('hidden');
-                }
+                if (i === pageNum) page.classList.remove('hidden');
+                else page.classList.add('hidden');
             }
             currentPage = pageNum;
             updateProgress();
         }
 
-        // --- EXERCÍCIO DE RESPIRAÇÃO (Tudo ajustado para roxo) ---
+        // --- SISTEMA DE RESPIRAÇÃO ROXA ---
         let breathingInterval = null;
-
         function toggleBreathing() {
             const container = document.getElementById('breatheContainer');
             const btn = document.getElementById('breatheBtn');
             const text = document.getElementById('breatheText');
-
             if (container.classList.contains('breathe-active')) {
                 container.classList.remove('breathe-active');
-                btn.className = "bg-[#3B1E54] text-white p-2.5 rounded-xl hover:bg-[#7A1C1C] transition-colors";
-                btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path></svg>`;
+                btn.innerHTML = `<svg class="w-5 h-5" fill="none" ...></svg>`;
                 text.innerText = "Toque para iniciar";
                 clearInterval(breathingInterval);
             } else {
                 container.classList.add('breathe-active');
-                btn.className = "bg-rose-700 text-white p-2.5 rounded-xl transition-colors";
-                btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
-                
                 runBreatheCycle(text);
-                breathingInterval = setInterval(() => {
-                    runBreatheCycle(text);
-                }, 10000);
+                breathingInterval = setInterval(() => { runBreatheCycle(text); }, 10000);
             }
         }
-
-        function runBreatheCycle(textElement) {
-            const container = document.getElementById('breatheContainer');
-            textElement.innerText = "Puxe o ar... (4s)";
-            textElement.className = "text-xs font-bold text-purple-600 transition-all duration-500";
-            
-            setTimeout(() => {
-                if (container.classList.contains('breathe-active')) {
-                    textElement.innerText = "Segure o ar... (7s)";
-                    textElement.className = "text-xs font-bold text-amber-600 transition-all duration-500";
-                }
-            }, 4000);
-
-            setTimeout(() => {
-                if (container.classList.contains('breathe-active')) {
-                    textElement.innerText = "Solte devagar... (8s)";
-                    textElement.className = "text-xs font-bold text-[#3B1E54] transition-all duration-500";
-                }
-            }, 6000);
+        function runBreatheCycle(el) {
+            el.innerText = "Puxe o ar... (4s)";
+            setTimeout(() => { el.innerText = "Segure o ar... (7s)"; }, 4000);
+            setTimeout(() => { el.innerText = "Solte devagar... (8s)"; }, 6000);
         }
 
-        // --- AUTO-TESTE DIGITAL ---
         function checkHigiene() {
-            const checkboxes = document.querySelectorAll('.higiene-checkbox');
-            const feedback = document.getElementById('higieneFeedback');
-            let checkedCount = 0;
-            
-            checkboxes.forEach(chk => {
-                if (chk.checked) checkedCount++;
-            });
-
-            if (checkedCount === 0) {
-                feedback.innerText = "Marque os seus hábitos atuais para a análise.";
-                feedback.className = "text-xs font-semibold text-slate-500";
-            } else if (checkedCount === 1) {
-                feedback.innerText = "Aviso leve: tente desconectar 30 minutos antes do sono.";
-                feedback.className = "text-xs font-semibold text-amber-600";
-            } else {
-                feedback.innerText = "Alerta do Zane: sua mente está saturando! Hora de um freio.";
-                feedback.className = "text-xs font-semibold text-[#7A1C1C]";
-            }
+            document.getElementById('higieneFeedback').innerText = "Alerta do Zane: Cuide das telas à noite!";
         }
 
-        // --- SISTEMA DE BATERIA EMOCIONAL (ROXO) ---
         function updateBattery() {
-            const checkboxes = document.querySelectorAll('.battery-chk');
-            const indicator = document.getElementById('batteryIndicator');
-            const label = document.getElementById('batteryPercent');
-            let activeCount = 0;
+            document.getElementById('batteryIndicator').style.width = "40%";
+            document.getElementById('batteryPercent').innerText = "Carga Baixa";
+        }
 
-            checkboxes.forEach(chk => {
-                if (chk.checked) activeCount++;
+        // --- ENGENHARIA DE TEXTO + DISPARO DE E-MAIL (ZANE ENGINE) ---
+        function submitResearch() {
+            const relato = document.getElementById('userRelato').value.trim();
+            if (!relato) {
+                alert("Zane precisa que você escreva algo antes de enviar! ☞⌐■_■");
+                return;
+            }
+
+            // Filtro básico de stopwords para extrair conceitos centrais (Estilo Iramuteq)
+            const palavras = relato.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").split(/\s+/);
+            const stopwords = ["de", "a", "o", "que", "e", "do", "da", "em", "um", "para", "com", "na", "no", "uma", "os", "as", "por", "mais", "me", "se", "minha", "meu", "tenho"];
+            const contagem = {};
+            
+            palavras.forEach(p => {
+                if (p.length > 3 && !stopwords.includes(p)) contagem[p] = (contagem[p] || 0) + 1;
             });
 
-            let percent = 100 - (activeCount * 45);
-            if (percent < 8) percent = 8; 
+            const ordenadas = Object.entries(contagem).sort((a, b) => b[1] - a[1]).slice(0, 3);
+            let termosDestaque = ordenadas.map(p => `"${p[0]}" (${p[1]}x)`).join(', ');
 
-            indicator.style.width = `${percent}%`;
+            // Dispara o e-mail via EmailJS escondido para o seu e-mail de pesquisador
+            const templateParams = {
+                termos: termosDestaque || "Nenhum termo repetido em massa",
+                relato_completo: relato
+            };
 
-            if (percent > 60) {
-                indicator.className = "h-full bg-[#3B1E54] transition-all duration-500 rounded-full";
-                label.innerText = "Carga Estável";
-                label.className = "text-xs font-bold text-[#3B1E54]";
-            } else if (percent > 30) {
-                indicator.className = "h-full bg-amber-500 transition-all duration-500 rounded-full";
-                label.innerText = "Carga Baixa";
-                label.className = "text-xs font-bold text-amber-600";
+            // Substitua "SEU_SERVICE_ID" e "SEU_TEMPLATE_ID" pelos códigos da sua conta EmailJS
+            emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
+                .then(function() {
+                    console.log('Dados enviados para a nuvem com sucesso!');
+                }, function(error) {
+                    console.log('Erro no envio do e-mail:', error);
+                });
+
+            // Mostra o feedback instantâneo na tela para o aluno
+            const analysisBox = document.getElementById('localAnalysis');
+            const resultText = document.getElementById('analysisResult');
+            analysisBox.classList.remove('hidden');
+            
+            if (ordenadas.length > 0) {
+                resultText.innerHTML = `Zane analisou seu texto! As palavras que você mais repetiu foram: <span class="text-[#7A1C1C] font-bold">${termosDestaque}</span>. Isso reflete onde está o foco do seu cansaço. Dados arquivados para a nossa pesquisa científica do campus!`;
             } else {
-                indicator.className = "h-full bg-[#7A1C1C] transition-all duration-500 rounded-full";
-                label.innerText = "Crítica! Desconecte.";
-                label.className = "text-xs font-bold text-[#7A1C1C]";
+                resultText.innerHTML = `Relato computado com sucesso na nossa central! Obrigado por colaborar com as estatísticas de saúde mental do campus.`;
             }
         }
 
@@ -449,5 +350,3 @@
     </script>
 </body>
 </html>
-
-```
