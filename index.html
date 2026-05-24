@@ -90,7 +90,7 @@
            
            
 
-            <section id="page1" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950" hidden">
+            <section id="page1" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950 hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">01</span>
@@ -129,7 +129,7 @@
             <!-- ================= SEÇÃO 2: ESTRESSE DIGITAL E SONO ================= -->
             
 
-            <section id="page2" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950" hidden">
+            <section id="page2" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950 hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">02</span>
@@ -171,7 +171,7 @@
 
                             <!-- ================= SEÇÃO 3: ESGOTAMENTO (BURNOUT) ================= -->
             
-            <section id="page3" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950" hidden">
+            <section id="page3" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950 hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">03</span>
@@ -223,7 +223,7 @@
 
                         <!-- ================= SEÇÃO 4: DESENVOLVIMENTO HUMANO ================= -->
 
-            <section id="page4" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950" hidden">
+            <section id="page4" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950 hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">04</span>
@@ -271,7 +271,7 @@
             </section>
                         <!-- ================= SEÇÃO 5: espaço de escuta ================= -->
 
-            <section id="page5" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950" hidden">
+            <section id="page5" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-white overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950 hidden">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-2">
                         <span class="px-2.5 py-1 bg-[#3B1E54] text-[#E0F2FE] text-xs font-bold rounded-lg">05</span>
@@ -383,7 +383,7 @@
                 </div>
             </section>
 
-            <section id="page6" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-gradient-to-b from-white to-slate-50 overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950" hidden">
+            <section id="page6" class="page-slide w-full p-8 flex flex-col justify-between absolute inset-0 bg-gradient-to-b from-white to-slate-50 overflow-y-auto dark:from-slate-900 dark:via-slate-900 dark:to-violet-950 hidden">
                 <div class="space-y-6">
                     <div class="text-center">
                         <span class="inline-block text-4xl mb-2">🌿Espero ter ajudado.s2🌿</span>
@@ -413,7 +413,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+            </section>
+        </main>
+    </div>
     <script>
         // CONFIGURAÇÃO DO EMAILJS (Substitua pela sua chave pública quando criar a conta)
         (function(){
@@ -624,7 +626,13 @@
             analysisBox.scrollIntoView({ behavior: 'smooth' });
         }
 
+// ... final das suas funções ...
+        
         updateProgress();
+
+        document.addEventListener("DOMContentLoaded", () => {
+            goToPage(0);
+        });
     </script>
 </body>
 </html>
