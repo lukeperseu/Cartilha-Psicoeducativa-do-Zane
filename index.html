@@ -39,14 +39,32 @@
     <!-- ABA ESQUERDA: FEED DE NOTÍCIAS (Corrigida para se comportar como gaveta em qualquer resolução) -->
     <aside id="abaEsquerda" class="fixed inset-y-0 left-0 w-64 bg-white/95 backdrop-blur-md p-6 border-r border-slate-200/60 shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
         <div class="flex justify-between items-center mb-4">
-            <h3 class="font-bold text-[#3B1E54] text-sm uppercase tracking-wider">📰 Feed de Notícias</h3>
+            <h3 class="font-bold text-[#3B1E54] text-sm uppercase tracking-wider">📰 Feed de Notícias & Rádio </h3>
             <button onclick="toggleAba('abaEsquerda')" class="text-slate-400 hover:text-slate-600 text-lg font-bold">✕</button>
         </div>
-        <p class="text-xs text-slate-500 leading-relaxed">
+      <!-- Radio LabZane -->
+<div class="mt-6 bg-slate-50/80 p-4 rounded-2xl border border-slate-200">
+            <h4 class="font-bold text-[#3B1E54] text-xs uppercase tracking-wider mb-3">📻 Rádio do Lab</h4>
+            
+            <div class="flex items-center space-x-2 mb-3">
+                <button id="playPauseBtn" onclick="toggleRadio()" class="bg-[#3B1E54] text-white text-xs font-bold px-3 py-2 rounded-lg hover:bg-[#7A1C1C] transition-colors w-20 flex justify-center">
+                    ▶️ Play
+                </button>
+                
+                <select id="stationSelect" onchange="changeStation()" class="flex-grow text-xs font-medium p-2 rounded-lg border border-slate-200 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-violet-300 transition-all cursor-pointer">
+                    <option value="jfKfPfyJRdk">Lofi Hip Hop (Foco/Estudo)</option>
+                    <option value="4xDzrUhVKcg">Synthwave (Energia/Cyber)</option>
+                    <option value="rUxyKA_-grg">Piano Suave (Relaxamento)</option>
+                </select>
+            </div>
+
+            <div class="overflow-hidden rounded-xl h-20 opacity-70 pointer-events-none relative shadow-inner">
+                <div id="youtubePlayer"></div>
+            </div>
+        </div>
+          <p class="text-xs text-slate-500 leading-relaxed">
             Novos arquivos adicionados recentemente no lab do Zane.
         </p>
-        <!-- Lofi Girl Radio -->
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/X4VbdwhkE10?si=njX5YOGz3lXZkeEn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </aside>
 
     <!-- FUNDO DINÂMICO (GIF) -->
@@ -654,6 +672,58 @@
             analysisBox.scrollIntoView({ behavior: 'smooth' });
         }
 
+// ================= MOTOR DA RÁDIO (YOUTUBE API) =================
+        let ytPlayer;
+        let isRadioPlaying = false;
+
+        // 1. Injeta o script oficial da API do YouTube no site
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // 2. Função que o YouTube chama automaticamente quando a API carrega
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player('youtubePlayer', {
+                height: '100%',
+                width: '100%',
+                videoId: document.getElementById('stationSelect').value, // Pega a primeira estação do select
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 0, // Desativa os controles feios do YouTube
+                    'disablekb': 1,
+                    'fs': 0,
+                    'modestbranding': 1,
+                    'rel': 0
+                }
+            });
+        }
+
+        // 3. Lógica do botão Play/Pause
+        function toggleRadio() {
+            const btn = document.getElementById('playPauseBtn');
+            
+            if (isRadioPlaying) {
+                ytPlayer.pauseVideo();
+                btn.innerHTML = "▶️ Play";
+                isRadioPlaying = false;
+            } else {
+                ytPlayer.playVideo();
+                btn.innerHTML = "⏸️ Pause";
+                isRadioPlaying = true;
+            }
+        }
+
+        // 4. Lógica de trocar a estação no Menu (Select)
+        function changeStation() {
+            const select = document.getElementById('stationSelect');
+            const videoId = select.value; // Pega o ID da nova rádio
+            
+            ytPlayer.loadVideoById(videoId); // Carrega a nova música
+            document.getElementById('playPauseBtn').innerHTML = "⏸️ Pause";
+            isRadioPlaying = true; // Já dá play automaticamente ao trocar
+        }
+        
         updateProgress();
         document.addEventListener("DOMContentLoaded", () => { goToPage(0); });
     </script>
